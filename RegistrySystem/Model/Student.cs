@@ -1,4 +1,4 @@
-﻿namespace RegistrySystem
+﻿namespace RegistrySystem.Model
 {
     public class Student : User
 	{

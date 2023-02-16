@@ -1,11 +1,21 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using RegistrySystem.Model;
+
+//Library for general purpose utilities
+
 namespace RegistrySystem
 {
-	public class Utilities
-	{
-		public Utilities()
-		{
-		}
-	}
+    class Utilities
+    {
+        public static void addUserJson(User user)
+        {
+            var jsonString = JsonConvert.SerializeObject(user);
+            Console.WriteLine(jsonString);
+
+            File.WriteAllText("../../../file.json", jsonString.ToString());
+        }
+    }
+
 }
+
 

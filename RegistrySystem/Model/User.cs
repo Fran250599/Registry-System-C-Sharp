@@ -1,5 +1,5 @@
 ﻿using System;
-namespace RegistrySystem
+namespace RegistrySystem.Model
 {
 	public abstract class User
 	{

@@ -1,4 +1,6 @@
-﻿namespace RegistrySystem
+﻿using RegistrySystem.Model;
+
+namespace RegistrySystem
 {
     class Program
     {
@@ -36,6 +38,9 @@
             {
                 Console.WriteLine("Student is inactive.");
             }
+
+            Utilities.addUserJson(student1);
+
 
         }
     }
