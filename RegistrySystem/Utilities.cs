@@ -7,9 +7,9 @@ namespace RegistrySystem
 {
     class Utilities
     {
-        public static void addUserJson(User user)
+        public static void createJsonFile(List<User> users)
         {
-            var jsonString = JsonConvert.SerializeObject(user);
+            var jsonString = JsonConvert.SerializeObject(users);
             Console.WriteLine(jsonString);
 
             File.WriteAllText("../../../file.json", jsonString.ToString());

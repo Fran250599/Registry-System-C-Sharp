@@ -7,39 +7,47 @@ namespace RegistrySystem
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Hello, this is an example to create a basic Object (Student in this case) dinamically\n");
+            List<User> users = new List<User>();
 
-            Console.WriteLine("Please put the student name: ");
-            string? name =  Console.ReadLine();
+            for(int i=0; i < 2; i++)
+            {
+                Console.WriteLine("Hello, this is an example to create a basic Object (Student in this case) dinamically\n");
 
-            Console.WriteLine("Please put the student id: ");
-            string? id = Console.ReadLine();
+                Console.WriteLine("Please put the student name: ");
+                string? name = Console.ReadLine();
 
-            Console.WriteLine("Please put the student password: ");
-            string? password = Console.ReadLine();
-           
-            bool state = true;
+                Console.WriteLine("Please put the student id: ");
+                string? id = Console.ReadLine();
 
-            Student student1 = new Student(name, id, password, state);
+                Console.WriteLine("Please put the student password: ");
+                string? password = Console.ReadLine();
+
+                bool state = true;
+
+                Student student1 = new Student(name, id, password, state);
+
+
+                Console.WriteLine("Thanks for the information, user created. \n ");
+
+                Console.WriteLine("This is the information provided: \n");
+                Console.WriteLine("Student name: " + student1.GetName());
+                Console.WriteLine("Student id: " + student1.GetId());
+                Console.WriteLine("Student password: " + student1.GetPassword());
+
+                if (student1.GetState() == true)
+                {
+                    Console.WriteLine("Student "+ name +"is active.");
+                }
+                else
+                {
+                    Console.WriteLine("Student "+ name +"is inactive.");
+                }
+
+                users.Add(student1);
+            }
             
 
-            Console.WriteLine("Thanks for the information, user created. \n ");
-
-            Console.WriteLine("This is the information provided: \n");
-            Console.WriteLine("Student name: " + student1.GetName());
-            Console.WriteLine("Student id: " + student1.GetId());
-            Console.WriteLine("Student password: " + student1.GetPassword());
-
-            if(student1.GetState() == true)
-            {
-                Console.WriteLine("Student is active.");
-            }
-            else
-            {
-                Console.WriteLine("Student is inactive.");
-            }
-
-            Utilities.addUserJson(student1);
+            Utilities.createJsonFile(users);
 
 
         }
