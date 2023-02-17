@@ -9,9 +9,10 @@ namespace RegistrySystem
 
             List<User> users = new List<User>();
 
-            for(int i=0; i < 2; i++)
-            {
-                Console.WriteLine("Hello, this is an example to create a basic Object (Student in this case) dinamically\n");
+            Console.WriteLine("Hello, this is an example to create a basic list of Objects (Students) dinamically\n");
+
+            for (int i=0; i < 2; i++)
+            { 
 
                 Console.WriteLine("Please put the student name: ");
                 string? name = Console.ReadLine();
@@ -36,7 +37,7 @@ namespace RegistrySystem
 
                 if (student1.GetState() == true)
                 {
-                    Console.WriteLine("Student "+ name +"is active.");
+                    Console.WriteLine("Student "+ name +"is active.\n\n");
                 }
                 else
                 {
