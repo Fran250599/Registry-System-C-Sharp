@@ -13,14 +13,6 @@ namespace RegistrySystem.Model
 		{
 			this.users = u;
 		}
-
-
-		public void addUser(User user)
-		{
-			users.Add(user);
-		}
-
-		
 	}
 }
 

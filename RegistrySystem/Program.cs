@@ -7,6 +7,7 @@ namespace RegistrySystem
         static void Main(string[] args)
         {
 
+            
             List<User> users = new List<User>();
 
             Console.WriteLine("Hello, this is an example to create a basic list of Objects (Students) dinamically\n");
@@ -37,11 +38,11 @@ namespace RegistrySystem
 
                 if (student1.GetState() == true)
                 {
-                    Console.WriteLine("Student "+ name +"is active.\n\n");
+                    Console.WriteLine("Student "+ name +" is active.\n\n");
                 }
                 else
                 {
-                    Console.WriteLine("Student "+ name +"is inactive.");
+                    Console.WriteLine("Student "+ name +" is inactive.");
                 }
 
                 users.Add(student1);
@@ -49,6 +50,9 @@ namespace RegistrySystem
             
 
             Utilities.createJsonFile(users);
+
+
+
 
 
         }
