@@ -1,12 +1,20 @@
 ﻿using System;
+using Newtonsoft.Json;
+
 namespace RegistrySystem.Model
 {
 	public abstract class User
 	{
-		public string name;
-		public string id;
-		public string password;
-		public bool state;
+        [JsonProperty]
+        protected string name;
+        [JsonProperty]
+        protected string id;
+        [JsonProperty]
+        protected string password;
+        [JsonProperty]
+        protected bool state;
+
+
 
 		protected User(string name, string id, string password, bool state)
 		{

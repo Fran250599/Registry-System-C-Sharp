@@ -1,1 +1,8 @@
-[{"name":"Francisco","id":"12345","password":"passwordtest","state":true},{"name":"Camila","id":"12345","password":"testpassword","state":true}]
+[
+  {
+    "name": "Francisco",
+    "id": "12345",
+    "password": "testpassword",
+    "state": true
+  }
+]
