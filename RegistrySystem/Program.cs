@@ -49,7 +49,7 @@ namespace RegistrySystem
             }
             
 
-            Utilities.createJsonFile(users);
+            Utilities.createJsonFile(users, "students");
 
 
 

@@ -7,12 +7,12 @@ namespace RegistrySystem
 {
     class Utilities
     {
-        public static void createJsonFile(List<User> users)
+        public static void createJsonFile(List<User> users, string fileName)
         {
             var jsonString = JsonConvert.SerializeObject(users);
             Console.WriteLine(jsonString);
 
-            File.WriteAllText("../../../file.json", jsonString.ToString());
+            File.WriteAllText(string.Format("./{0}.json", fileName), jsonString.ToString());
         }
     }
 
