@@ -14,6 +14,7 @@ class Menu
 
     void showMenu()
     {
+        Console.Clear();
         Console.WriteLine("Welcome to the Registry System");
         Console.WriteLine("Please select an option:");
         Console.WriteLine("1. Create a new user");
@@ -43,7 +44,7 @@ class Menu
             {
                 case 1:
                 // Create user
-                
+                    Console.Clear();
                     createUser();
                     break;
                 case 2:
@@ -108,6 +109,7 @@ class Menu
         {
             case 1:
                 // Create student
+                Console.Clear();
                 createStudent();
                 break;
             case 2:
@@ -139,9 +141,12 @@ class Menu
 
             bool state = true;
 
-
             usersController.createUser(name, id, password, state, "student");
 
+            Console.WriteLine("Student created successfully, please press any key to continue");
+            Console.ReadKey();
+
+            Console.Clear();
         }
         catch (Exception e)
         {
