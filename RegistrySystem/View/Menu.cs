@@ -14,6 +14,7 @@ class Menu
 
     void showMenu()
     {
+        Console.Clear();
         Console.WriteLine("Welcome to the Registry System");
         Console.WriteLine("Please select an option:");
         Console.WriteLine("1. Create a new user");
@@ -113,6 +114,8 @@ class Menu
                 break;
             case 2:
                 // Create teacher
+                Console.Clear();
+                createTeacher();
                 break;
             case 3:
                 // Create administrator
@@ -151,9 +154,34 @@ class Menu
         {
             Console.WriteLine("Error: " + e.Message);
         }
+    }
 
+    public void createTeacher()
+    {
+        try
+        {
+            Console.WriteLine("Please put the teacher name: ");
+            string name = Console.ReadLine();
 
+            Console.WriteLine("Please put the teacher id: ");
+            string id = Console.ReadLine();
 
+            Console.WriteLine("Please put the teacher password: ");
+            string password = Console.ReadLine();
+
+            bool state = true;
+
+            usersController.createUser(name, id, password, state, "teacher");
+
+            Console.WriteLine("Teacher created successfully, please press any key to continue");
+            Console.ReadKey();
+
+            Console.Clear();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message);
+        }
     }
 
     //Main method

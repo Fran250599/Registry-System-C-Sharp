@@ -10,7 +10,7 @@ class UsersController
 
     private List<User> users = new List<User>();
     private List<Student> students = new List<Student>();
-    //List<Teacher> teachers = new List<Teacher>();
+    List<Teacher> teachers = new List<Teacher>();
     //List<Administrator> administrators = new List<Administrator>();
 
 
@@ -30,7 +30,7 @@ class UsersController
             //users.AddRange(teachers);
             //users.AddRange(administrators);
 
-            
+
         }
         catch (Exception e)
         {
@@ -53,15 +53,18 @@ class UsersController
             //Add the new student to the json file
             JsonController.createJsonFile(users, "users");
             JsonController.createJsonFileStudents(students, "students");
-            
-
         }
-       /* else if (type == "teacher")
+        else if (type == "teacher")
         {
             Teacher teacher = new Teacher(name, id, password, state);
             users.Add(teacher);
+            teachers.Add(teacher);
+
+            //Add the new teacher to the json file
+            JsonController.createJsonFile(users, "users");
+            JsonController.createJsonFileTeachers(teachers, "teachers");
         }
-        else if (type == "administrator")
+        /*else if (type == "administrator")
         {
             Administrator administrator = new Administrator(name, id, password, state);
             users.Add(administrator);
