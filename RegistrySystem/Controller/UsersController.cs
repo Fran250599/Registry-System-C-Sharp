@@ -18,13 +18,19 @@ class UsersController
     // Initialize the list of users, students, teachers and administrators from the json files
     public UsersController()
     {
-        //Try to read the json file with the list of users, students, teachers and administrators
+        //Try to read the json file with the list of students, teachers and administrators
         try
         {
-            users = JsonController.readJsonFile("users");
             students = JsonController.readJsonFileStudents("students");
             //teachers = Utilities.readJsonFileTeachers("teachers");
             //administrators = Utilities.readJsonFileAdministrators("administrators");
+
+            //Finally, add all the users to the list of users
+            users.AddRange(students);
+            //users.AddRange(teachers);
+            //users.AddRange(administrators);
+
+            
         }
         catch (Exception e)
         {

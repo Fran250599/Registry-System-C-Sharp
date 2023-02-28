@@ -4,5 +4,11 @@
     "id": "12345",
     "password": "0987",
     "state": true
+  },
+  {
+    "name": "Francisco",
+    "id": "12345",
+    "password": "newAccount",
+    "state": true
   }
 ]

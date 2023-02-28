@@ -14,7 +14,6 @@ class Menu
 
     void showMenu()
     {
-        Console.Clear();
         Console.WriteLine("Welcome to the Registry System");
         Console.WriteLine("Please select an option:");
         Console.WriteLine("1. Create a new user");
