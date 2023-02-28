@@ -5,7 +5,7 @@
 // The menu is shown in a loop until the user decides to exit the program.
 
 using RegistrySystem.Controller;
-using RegistrySystem;
+using RegistrySystem.Model;
 
 class Menu
 {
@@ -49,6 +49,8 @@ class Menu
                     break;
                 case 2:
                     // Show all users
+                    Console.Clear();
+                    showAllUsers();
                     break;
                 case 3:
                     // Show all active users
@@ -184,6 +186,26 @@ class Menu
         }
     }
 
+    // This method will show all the users
+    public void showAllUsers()
+    {
+        try
+        {
+            List<User> users = usersController.GetUsers();
+            foreach (User user in users)
+            {
+                Console.WriteLine(user.ToString());
+            }
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message);
+        }
+    }
+   
     //Main method
     static void Main(string[] args)
     {

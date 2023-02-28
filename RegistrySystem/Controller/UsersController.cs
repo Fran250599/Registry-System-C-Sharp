@@ -12,7 +12,7 @@ class UsersController
     private List<Student> students = new List<Student>();
     List<Teacher> teachers = new List<Teacher>();
     //List<Administrator> administrators = new List<Administrator>();
-
+    public List<User> GetUsers() => users;
 
 
     // Initialize the list of users, students, teachers and administrators from the json files
@@ -22,12 +22,12 @@ class UsersController
         try
         {
             students = JsonController.readJsonFileStudents("students");
-            //teachers = Utilities.readJsonFileTeachers("teachers");
+            teachers = JsonController.readJsonFileTeachers("teachers");
             //administrators = Utilities.readJsonFileAdministrators("administrators");
 
             //Finally, add all the users to the list of users
             users.AddRange(students);
-            //users.AddRange(teachers);
+            users.AddRange(teachers);
             //users.AddRange(administrators);
 
 
@@ -90,6 +90,14 @@ class UsersController
         students = JsonController.readJsonFileStudents("users");
         return students;
     }
+
+
+    // Return the list of users
+    public List<User> getUsers()
+    {
+        return users;
+    }
+
 
 
 
