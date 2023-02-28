@@ -42,7 +42,8 @@ class Menu
             switch (option)
             {
                 case 1:
-                    // Create user
+                // Create user
+                
                     createUser();
                     break;
                 case 2:
@@ -91,6 +92,7 @@ class Menu
         } while (option != 14);
     }
 
+    // This method will ask for the kind of user to create and will call the corresponding method
 
     public void createUser()
     {
@@ -120,6 +122,8 @@ class Menu
         }
     }
 
+
+    // This method will ask for the user information and will call the create user method from the controller
     public void createStudent()
     {
         try
@@ -137,6 +141,7 @@ class Menu
 
 
             usersController.createUser(name, id, password, state, "student");
+
         }
         catch (Exception e)
         {

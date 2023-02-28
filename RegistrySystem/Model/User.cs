@@ -14,18 +14,13 @@ namespace RegistrySystem.Model
         [JsonProperty]
         protected bool state;
 
-
-
-		protected User(string name, string id, string password, bool state)
-		{
-			this.name = name;
-			this.id = id;
-			this.password = password;
-			this.state = state;
-
-		}
-		
-
+        protected User(string? name, string? id, string? password, bool state)
+        {
+            this.name = name;
+            this.id = id;
+            this.password = password;
+            this.state = state;
+        }
     }
 }
 

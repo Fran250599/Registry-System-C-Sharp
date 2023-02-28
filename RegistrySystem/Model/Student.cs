@@ -10,7 +10,6 @@
 		public string GetId() => id;
 		public string GetPassword() => password;
 		public bool GetState() => state;
-
 		
 	}
 }

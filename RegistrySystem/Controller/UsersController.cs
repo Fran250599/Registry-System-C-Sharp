@@ -21,8 +21,8 @@ class UsersController
         //Try to read the json file with the list of users, students, teachers and administrators
         try
         {
-            users = Utilities.readJsonFile("users");
-            students = Utilities.readJsonFileStudents("students");
+            users = JsonController.readJsonFile("users");
+            students = JsonController.readJsonFileStudents("students");
             //teachers = Utilities.readJsonFileTeachers("teachers");
             //administrators = Utilities.readJsonFileAdministrators("administrators");
         }
@@ -45,8 +45,9 @@ class UsersController
             students.Add(student);
 
             //Add the new student to the json file
-            Utilities.createJsonFileStudents(students, "students");
-
+            JsonController.createJsonFile(users, "users");
+            JsonController.createJsonFileStudents(students, "students");
+            
 
         }
        /* else if (type == "teacher")
@@ -70,14 +71,14 @@ class UsersController
     // Read the json file and return a list of users
     public List<User> readUsers()
     {
-        users = Utilities.readJsonFile("users");
+        users = JsonController.readJsonFile("users");
         return users;
     }
 
     // Read the json file and return a list of students
     public List<Student> readStudents()
     {
-        students = Utilities.readJsonFileStudents("users");
+        students = JsonController.readJsonFileStudents("users");
         return students;
     }
 
