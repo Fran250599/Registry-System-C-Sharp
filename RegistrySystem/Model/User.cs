@@ -21,6 +21,10 @@ namespace RegistrySystem.Model
             this.password = password;
             this.state = state;
         }
+
+        public string toString(){
+            return "Name: " + name + " Id: " + id + " Password: " + password + " State: " + state;
+        }
     }
 }
 

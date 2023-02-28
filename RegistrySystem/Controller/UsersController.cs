@@ -21,23 +21,28 @@ class UsersController
         //Try to read the json file with the list of students, teachers and administrators
         try
         {
+            //Verify if the retrieved list is not empty
             students = JsonController.readJsonFileStudents("students");
             teachers = JsonController.readJsonFileTeachers("teachers");
             //administrators = Utilities.readJsonFileAdministrators("administrators");
 
-            //Finally, add all the users to the list of users
-            users.AddRange(students);
-            users.AddRange(teachers);
-            //users.AddRange(administrators);
-
-
+            if (students.Any())
+            {
+                if (teachers.Any())
+                {
+                    //Finally, add all the users to the list of users
+                    users.AddRange(students);
+                    users.AddRange(teachers);
+                    //users.AddRange(administrators);
+                }
+            }
         }
         catch (Exception e)
         {
             Console.WriteLine("Error reading the json file: " + e.Message);
         }
     }
-    
+
     public void createUser(string name, string id, string password, bool state, string type)
     {
         // Create user
@@ -73,7 +78,7 @@ class UsersController
         {
             Console.WriteLine("Please select a valid type of user");
         }
-    
+
     }
 
 

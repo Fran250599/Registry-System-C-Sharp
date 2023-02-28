@@ -192,9 +192,9 @@ class Menu
         try
         {
             List<User> users = usersController.GetUsers();
-            foreach (User user in users)
+            foreach (User user in users) 
             {
-                Console.WriteLine(user.ToString());
+                Console.WriteLine(user.toString());
             }
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();

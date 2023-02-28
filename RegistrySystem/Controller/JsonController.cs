@@ -11,16 +11,27 @@ namespace RegistrySystem
         // Create a json file with the list of users
         public static void createJsonFile(List<User> users, string fileName)
         {
-            var jsonString = JsonConvert.SerializeObject(users, Formatting.Indented);
-            File.WriteAllText(string.Format("./{0}.json", fileName), jsonString);
+            try{
+                var jsonString = JsonConvert.SerializeObject(users, Formatting.Indented);
+                Console.WriteLine(jsonString);
+                File.WriteAllText(string.Format("./{0}.json", fileName), jsonString);
+            }catch(Exception e){
+                Console.WriteLine("Error creating the json file: " + e.Message);
+            }
         }
 
         //Read the json file and return a list of users
         public static List<User> readJsonFile(string fileName)
         {
-            var jsonString = File.ReadAllText(string.Format("./{0}.json", fileName));
-            var users = JsonConvert.DeserializeObject<List<User>>(jsonString);
-            return users;
+            try{
+                var jsonString = File.ReadAllText(string.Format("./{0}.json", fileName));
+                var users = JsonConvert.DeserializeObject<List<User>>(jsonString);
+                return users;
+
+            }catch(Exception e){
+                Console.WriteLine("Error reading the json file: " + e.Message);
+                return new List<User>();
+            }
         }
 
         // STUDENTS JSON MANAGEMENT
@@ -36,9 +47,15 @@ namespace RegistrySystem
         // Read the json file and return a list of students
         public static List<Student> readJsonFileStudents(string fileName)
         {
-            var jsonString = File.ReadAllText(string.Format("./{0}.json", fileName));
-            var students = JsonConvert.DeserializeObject<List<Student>>(jsonString);
-            return students;
+            try{
+                var jsonString = File.ReadAllText(string.Format("./{0}.json", fileName));
+                var students = JsonConvert.DeserializeObject<List<Student>>(jsonString);
+                return students;
+            }catch(Exception e){
+                Console.WriteLine("Error reading the json file: " + e.Message);
+                return new List<Student>();
+            }
+         
         }
 
         // TEACHERS JSON MANAGEMENT
